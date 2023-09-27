@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main() {
+    int num = 1;
+    printf("enter a number");
+    scanf("%d", & num);
+
+    if(num>=1){
+        printf("A natural number");
+    }
+
+    else{
+        printf("Is not a nutural number");
+    }
+    return 0;
+}
