@@ -1,0 +1,17 @@
+#include<stdio.h>
+void printhello();
+void printGoodbuy();
+
+int main(){
+	printhello();
+    printGoodbuy();
+	return 0;
+}
+
+void printhello(){
+	printf("Hello\n");
+}
+
+void printGoodbuy(){
+	printf("Goodbuy\n");
+}
