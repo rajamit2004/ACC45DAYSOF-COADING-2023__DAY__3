@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int XX, YY;
+        scanf("%d %d", &XX, &YY);
+
+        // Calculate the absolute difference between XX and YY
+        int diff = abs(XX - YY);
+
+        // Calculate the minimum number of button presses required
+        int presses = diff / 11;
+
+        // If there's a remainder, add 1 more press
+        if (diff % 11 != 0) {
+            presses++;
+        }
+
+        printf("%d\n", presses);
+    }
+
+    return 0;
+}
