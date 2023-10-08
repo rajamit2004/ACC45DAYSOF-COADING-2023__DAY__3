@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int W, X, Y, Z;
+        scanf("%d %d %d %d", &W, &X, &Y, &Z);
+
+        int balance = W;
+        for (int i = 0; i < Z; i++) {
+            balance += X;
+            balance -= Y;
+        }
+
+        printf("%d\n", balance);
+    }
+
+    return 0;
+}
