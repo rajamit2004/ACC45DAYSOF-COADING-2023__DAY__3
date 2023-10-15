@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int X;
+        scanf("%d", &X);
+
+        int incorrect = 0;
+
+        for (int i = 0; i <= 100; i++) {
+            for (int j = 0; j <= 100; j++) {
+                int score = i * 3 - j;
+                if (score == X && i + j <= 100) {
+                    incorrect = j;
+                    break;
+                }
+            }
+            if (incorrect > 0) {
+                break;
+            }
+        }
+
+        printf("%d\n", incorrect);
+    }
+
+    return 0;
+}
