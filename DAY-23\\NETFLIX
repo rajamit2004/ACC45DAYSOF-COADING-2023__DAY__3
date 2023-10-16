@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    float alice_money, bob_money, charlie_money, subscription_cost;
+
+    // Input the amounts each person has and the subscription cost
+    printf("Enter Alice's money: ");
+    scanf("%f", &alice_money);
+    printf("Enter Bob's money: ");
+    scanf("%f", &bob_money);
+    printf("Enter Charlie's money: ");
+    scanf("%f", &charlie_money);
+    printf("Enter the subscription cost: ");
+    scanf("%f", &subscription_cost);
+
+    if (alice_money >= subscription_cost || bob_money >= subscription_cost || charlie_money >= subscription_cost) {
+        printf("At least one person can afford the subscription individually.\n");
+    } else if ((alice_money + bob_money >= subscription_cost) || 
+               (alice_money + charlie_money >= subscription_cost) || 
+               (bob_money + charlie_money >= subscription_cost)) {
+        printf("At least two of them can contribute to buy the subscription.\n");
+    } else {
+        printf("None of them can afford the subscription.\n");
+    }
+
+    return 0;
+}
