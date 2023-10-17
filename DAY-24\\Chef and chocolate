@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int T; // Number of test cases
+    scanf("%d", &T);
+    
+    while (T--) {
+        int C, X, Y;
+        scanf("%d %d %d", &C, &X, &Y);
+        
+        // Calculate the minimum money Chef needs to spend
+        long long cost = ((long long)C * Y) + ((C <= X) ? 0 : (C - X));
+        
+        printf("%lld\n", cost);
+    }
+    
+    return 0;
+}
