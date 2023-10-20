@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int X, Y;
+    float policemanSpeed = 2.0;
+    float thiefSpeed = 1.0;
+
+    printf("Enter the initial location of the policeman (X): ");
+    scanf("%d", &X);
+    printf("Enter the initial location of the thief (Y): ");
+    scanf("%d", &Y);
+
+    float time = (Y - X) / (policemanSpeed - thiefSpeed);
+
+    printf("Minimum time for the policeman to catch the thief: %.2f seconds\n", time);
+
+    return 0;
+}
