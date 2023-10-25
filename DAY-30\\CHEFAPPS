@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    int S, X, Y, Z;
+    
+    // Input the total storage S, memory occupied by apps X and Y, and the requirement of the third app Z.
+    printf("Enter the total storage (S): ");
+    scanf("%d", &S);
+    printf("Enter memory occupied by app X: ");
+    scanf("%d", &X);
+    printf("Enter memory occupied by app Y: ");
+    scanf("%d", &Y);
+    printf("Enter memory required for the third app (Z): ");
+    scanf("%d", &Z);
+    
+    // Calculate the remaining storage after deleting apps X and Y.
+    int remainingStorage = S - X - Y;
+    
+    // Check if Chef can install the third app.
+    if (remainingStorage >= Z) {
+        printf("Chef can install the third app without deleting any apps.\n");
+    } else {
+        int appsToDelete = 0;
+        int storageFreed = 0;
+        
+        // Chef needs to delete apps to free up enough storage.
+        while (remainingStorage + storageFreed < Z) {
+            int minApp = (X < Y) ? X : Y;  // Find the smaller of the two apps to delete.
+            
+            if (minApp == X) {
+                X = 0;  // Delete app X.
+            } else {
+                Y = 0;  // Delete app Y.
+            }
+            
+            appsToDelete++;
+            storageFreed += minApp;
+        }
+        
+        printf("Chef needs to delete %d apps to install the third app.\n", appsToDelete);
+    }
+    
+    return 0;
+}
