@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int N, X, D;
+        scanf("%d %d %d", &N, &X, &D);
+
+        int totalBunsRequired = X * D;
+        
+        if (totalBunsRequired <= N) {
+            printf("%d\n", D);
+        } else {
+            int remainingDays = N / X;
+            printf("%d\n", remainingDays);
+        }
+    }
+
+    return 0;
+}
