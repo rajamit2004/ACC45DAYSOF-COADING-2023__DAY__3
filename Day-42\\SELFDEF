@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+    
+    while (T--) {
+        int N;
+        scanf("%d", &N);
+        int eligibleCount = 0;
+        
+        for (int i = 0; i < N; i++) {
+            int age;
+            scanf("%d", &age);
+            
+            if (age >= 10 && age <= 60) {
+                eligibleCount++;
+            }
+        }
+        
+        printf("%d\n", eligibleCount);
+    }
+    
+    return 0;
+}
